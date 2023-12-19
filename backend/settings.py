@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'westtrad_testing',
-        'USER': 'westtrad_admin',
-        'PASSWORD': 'Passover@17',
-        'HOST': '131.153.148.82',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '6-Af-AFEdbcED4Bd1f4F*bAA3CDcfBaE',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '36782',
 
     }
 }

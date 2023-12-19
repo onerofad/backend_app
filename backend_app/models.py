@@ -1,4 +1,10 @@
 from django.db import models
+import random
+
+def getRandom():
+    random_number = random.randint(1000000000, 9999999999)
+    return random_number
+
 
 class Register(models.Model):
     fname = models.CharField(max_length=255)
@@ -21,6 +27,10 @@ class Register(models.Model):
     socialsecurity = models.CharField(max_length=255)
     confirmsocialsecurity = models.CharField(max_length=255)
     dob = models.DateField(auto_now_add=True)
+
+    accountnumber = models.TextField(default=getRandom)
+    accountype = models.TextField(default="Not Available")
+    accountbal = models.FloatField(default=0.0)
 
     imageurl = models.TextField()
     imageurl1 = models.TextField()
