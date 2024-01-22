@@ -80,21 +80,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '6-Af-AFEdbcED4Bd1f4F*bAA3CDcfBaE',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '36782',
-
-    }
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'railway',
+       'USER': 'postgres',
+       'PASSWORD': 'fb64e2a4aBgCAbE*C3F3FaE-B5f6-aEG',
+       'HOST': 'roundhouse.proxy.rlwy.net',
+       'PORT': '25275',
+   }
 }
-#DATABASES = {
-#      'default': {
-#           'ENGINE': 'django.db.backends.sqlite3',
-#           'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+# DATABASES = {
+#     'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'swift_db',
+#          'USER': 'root',
+#          'PASSWORD': '',
+#          'HOST': 'localhost',
+#          'PORT': '3306'
 #        }
-#    }
+#     }
 
 
 # Password validation
