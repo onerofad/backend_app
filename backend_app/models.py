@@ -43,4 +43,5 @@ class Sample(models.Model):
     profileimage = models.TextField()
     cardimagefront = models.TextField()
     carfimageback = models.TextField()
+    
 
