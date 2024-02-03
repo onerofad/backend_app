@@ -44,4 +44,12 @@ class Sample(models.Model):
     cardimagefront = models.TextField()
     carfimageback = models.TextField()
     
-
+class LocalTransfer(models.Model):
+    amount = models.FloatField()
+    account = models.CharField(max_length = 255)
+    accounttype = models.CharField(max_length = 255)
+    accountbal = models.CharField(max_length = 255)
+    fname = models.CharField(max_length = 255)
+    lname = models.CharField(max_length = 255)
+    accountNo = models.CharField(max_length = 255)
+    remark = models.CharField(max_length = 255)
