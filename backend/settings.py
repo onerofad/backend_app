@@ -83,22 +83,22 @@ DATABASES = {
       'ENGINE': 'django.db.backends.postgresql',
       'NAME': 'railway',
       'USER': 'postgres',
-      'PASSWORD': '-Cg4cDF2gaBCE--2BgAefecfDbEgaEeD',
-      'HOST': 'roundhouse.proxy.rlwy.net',
-      'PORT': '41880',
+      'PASSWORD': '2Dddfdfaf-FCB-3fF-gAEEbbACB*CGc*',
+      'HOST': 'viaduct.proxy.rlwy.net',
+      'PORT': '42626',
 
     }
 }
 #DATABASES = {
-#     'default': {
+#    'default': {
 #          'ENGINE': 'django.db.backends.mysql',
 #          'NAME': 'swift_db',
 #          'USER': 'root',
 #          'PASSWORD': '',
 #          'HOST': 'localhost',
 #           'PORT': '3306'
-#        }
 #    }
+#}
 
 
 # Password validation

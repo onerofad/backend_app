@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend_app.views import RegisterView, SampleView, LocalTransferView
+from backend_app.views import RegisterView, SampleView, LocalTransferView, TransferHistoryView, SaveAccountView
 
 router = routers.DefaultRouter()
 router.register('users', RegisterView, 'user')
 router.register('sample', SampleView, 'sample')
 router.register('localtransfers', LocalTransferView, 'localtransfers')
-
+router.register('transferhistorys', TransferHistoryView, 'transferhistory')
+router.register('saveaccounts', SaveAccountView, 'saveaccount')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

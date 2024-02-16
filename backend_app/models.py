@@ -47,9 +47,22 @@ class Sample(models.Model):
 class LocalTransfer(models.Model):
     amount = models.FloatField()
     account = models.CharField(max_length = 255)
-    accounttype = models.CharField(max_length = 255)
-    accountbal = models.CharField(max_length = 255)
     fname = models.CharField(max_length = 255)
     lname = models.CharField(max_length = 255)
     accountNo = models.CharField(max_length = 255)
     remark = models.CharField(max_length = 255)
+    to_fname = models.CharField(max_length = 255, default='')
+    to_lname = models.CharField(max_length = 255, default='')
+    trans_date = models.DateField(auto_now=True )
+
+    def __str__(self):
+        return self.account
+
+class SaveAccount(models.Model):
+    fname = models.CharField(max_length=255)
+    lname = models.CharField(max_length=255)
+    accountnumber = models.CharField(max_length = 255)
+
+    def __str__(self):
+        return self.accountnumber
+
