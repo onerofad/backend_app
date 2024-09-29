@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path, os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-y4a_1olot4oezni85ek%$3gh-ne@l#fx^az-@1*t^tv4-v3kpg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://financial-app-three.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://masta-plana.vercel.app']
 
 
 # Application definition
@@ -78,27 +79,31 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-      'ENGINE': 'django.db.backends.postgresql',
-      'NAME': 'railway',
-      'USER': 'postgres',
-      'PASSWORD': '2Dddfdfaf-FCB-3fF-gAEEbbACB*CGc*',
-      'HOST': 'viaduct.proxy.rlwy.net',
-      'PORT': '42626',
+#DATABASES = {
+#    'default': {
+#      'ENGINE': 'django.db.backends.postgresql',
+#      'NAME': 'railway',
+#      'USER': 'postgres',
+#      'PASSWORD': '-Cg4cDF2gaBCE--2BgAefecfDbEgaEeD',
+#      'HOST': 'roundhouse.proxy.rlwy.net',
+#      'PORT': '41880',
 
-    }
-}
+#    }
+#}
 #DATABASES = {
 #    'default': {
 #          'ENGINE': 'django.db.backends.mysql',
 #          'NAME': 'swift_db',
 #          'USER': 'root',
-#          'PASSWORD': '',
+#         'PASSWORD': '',
 #          'HOST': 'localhost',
-#           'PORT': '3306'
+#          'PORT': '3306'
 #    }
 #}
+
+DATABASES = {
+    'default': dj_database_url.parse(f'postgresql://postgres:sckHsMyltQAwSAdvxbGrHlkLtYALPOvI@autorack.proxy.rlwy.net:51840/railway')
+}
 
 
 # Password validation
@@ -146,7 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'https://financial-app-three.vercel.app'
+    'https://masta-plana.vercel.app'
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
