@@ -18,13 +18,13 @@ class Register(models.Model):
 
     def __str__(self):
         return self.fname
-
 class UploadedFiles(models.Model):
-    fileowner = models.ForeignKey(Register, on_delete=models.CASCADE, to_field='email')
+    fileowner = models.CharField(max_length=255)
     uploaded_file = models.TextField()
     file_date = models.DateField(auto_now_add=True)
 
     
     def __str__(self):
         return self.fileowner
+
 
