@@ -23,7 +23,7 @@ class Register(models.Model):
 
 class UploadedFiles(models.Model):
     fileowner = models.ForeignKey(Register, on_delete=models.CASCADE, to_field='email')
-    uploaded_file = CloudinaryField("images", default="")
+    uploaded_file = cloudinary.uploader.upload
     file_date = models.DateField(auto_now_add=True)
 
     
