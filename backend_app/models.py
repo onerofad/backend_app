@@ -1,6 +1,7 @@
 from django.db import models
 import random
-from cloudinary.models import CloudinaryField
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
 
 def getRandom():
     random_number = random.randint(1000000000, 9999999999)
