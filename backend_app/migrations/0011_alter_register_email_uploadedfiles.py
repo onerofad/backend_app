@@ -21,7 +21,6 @@ class Migration(migrations.Migration):
             name='UploadedFiles',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('upload_file', models.FileField(upload_to=backend_app.models.file_upload_to)),
                 ('file_date', models.DateField(auto_now_add=True)),
                 ('fileowner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_app.register', to_field='email')),
             ],
