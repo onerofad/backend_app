@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path, os
 import dj_database_url
-import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -159,8 +158,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-cloudinary.config( 
-  cloud_name = "du3ck2joa", 
-  api_key = "577678585426578", 
-  api_secret = "RF5HIq7u8jyXzZG3MEjt3WEuA3k" 
-)

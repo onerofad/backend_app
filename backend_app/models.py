@@ -1,7 +1,5 @@
 from django.db import models
 import random
-import cloudinary.uploader
-from cloudinary.utils import cloudinary_url
 
 def getRandom():
     random_number = random.randint(1000000000, 9999999999)
@@ -23,7 +21,7 @@ class Register(models.Model):
 
 class UploadedFiles(models.Model):
     fileowner = models.ForeignKey(Register, on_delete=models.CASCADE, to_field='email')
-    uploaded_file = cloudinary.uploader.upload
+    uploaded_file = models.TextField()
     file_date = models.DateField(auto_now_add=True)
 
     
