@@ -21,7 +21,7 @@ class Register(models.Model):
     
 class UploadedFiles(models.Model):
     fileowner = models.CharField(max_length=255)
-    filereceiver = models.CharField(max_length=255, default='')
+    filesender = models.CharField(max_length=255, default='')
     uploaded_file = models.TextField()
     file_date = models.DateField(auto_now_add=True)
 
