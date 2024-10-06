@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView
+from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView
 
 router = routers.DefaultRouter()
 router.register('users', RegisterView, 'user')
 router.register('uploadfiles', UploadedFilesView, 'uploadfile')
 router.register('uploadaudios', UploadedAudioView, 'uploadaudio')
+router.register('uploadvideos', UploadedVideoView, 'uploadvideo')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
