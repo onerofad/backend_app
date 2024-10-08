@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -18,3 +18,7 @@ class UploadedAudioView(viewsets.ModelViewSet):
 class UploadedVideoView(viewsets.ModelViewSet):
     queryset = UploadedVideo.objects.all()
     serializer_class = UploadedVideoSerializer
+
+class NoteView(viewsets.ModelViewSet):
+    queryset = Notes.objects.all()
+    serializer_class = NotesSerializer

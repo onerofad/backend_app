@@ -46,4 +46,13 @@ class UploadedVideo(models.Model):
     def __str__(self):
         return self.fileowner
 
+class Notes(models.Model):
+    noteowner = models.CharField(max_length=255)
+    title = models.TextField()
+    content = models.TextField()
+    nodedate = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
 
