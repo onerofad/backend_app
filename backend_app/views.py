@@ -1,16 +1,14 @@
-from django.shortcuts import render, redirect
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, Form1
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, Form1Serializer
-
-from django.contrib import messages
-from django.urls import reverse
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, Student
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, StudentSerializer
+from django.shortcuts import render,redirect
 
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from rest_framework import generics, status
 from rest_framework.response import Response
 
-from .response import render_html_response
+from . response import render_html_response
+from django.contrib import messages
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -32,22 +30,22 @@ class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
 
-class Form1View(viewsets.ModelViewSet):
+# Create your views here.
+class StudentaddView(generics.ListAPIView):
     """
     View to get the listing of all contacts.
     Supports both HTML and JSON response formats.
     """
-    serializer_class = Form1Serializer
+    serializer_class = StudentSerializer
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
-    template_name = 'form1.html'
-
+    template_name = 'student_form.html'
    
     def get(self, request, *args, **kwargs):
-        queryset = Form1.objects.all()
+        queryset = Student.objects.all()
 
         if request.accepted_renderer.format == 'html':
             serializer = self.serializer_class()  # Create an instance of the serializer
-            context = {'form1': queryset, 'serializer': serializer}
+            context = {'students': queryset, 'serializer': serializer}
             return render_html_response(context, self.template_name)
         else:
             # Return a JSON response if the format is not HTML
@@ -66,7 +64,7 @@ class Form1View(viewsets.ModelViewSet):
 
             if request.accepted_renderer.format == 'html':
                 messages.success(request, message)
-                return redirect('form1')
+                return redirect('student_add')
 
             else:
                 # Return JSON response with success message and serialized data
@@ -85,3 +83,7 @@ class Form1View(viewsets.ModelViewSet):
                 return Response(status_code=status.HTTP_400_BAD_REQUEST,
                                     message="We apologize for the inconvenience, but please review the below information.",
                                     data=(serializer.errors))
+
+        
+        
+        
