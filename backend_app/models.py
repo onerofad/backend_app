@@ -55,4 +55,13 @@ class Notes(models.Model):
     def __str__(self):
         return self.title
 
+class Form1(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.first_name
+
+
 
