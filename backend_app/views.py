@@ -32,7 +32,7 @@ class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
 
-class Form1View(generics.ListAPIView):
+class Form1View(viewsets.ModelViewSet):
     """
     View to get the listing of all contacts.
     Supports both HTML and JSON response formats.
@@ -40,6 +40,7 @@ class Form1View(generics.ListAPIView):
     serializer_class = Form1Serializer
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
     template_name = 'form1.html'
+
    
     def get(self, request, *args, **kwargs):
         queryset = Form1.objects.all()
