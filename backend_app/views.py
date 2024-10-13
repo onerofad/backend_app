@@ -5,7 +5,8 @@ from django.shortcuts import get_object_or_404, redirect
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+from rest_framework.decorators import action
+from rest_framework.permissions import IsAdminUser
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -27,15 +28,19 @@ class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
 
-class ProfileDetail(APIView):
+class ProfileDetail(viewsets.ModelViewSet):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'profile_detail.html'
 
+    @action(methods=['get'], detail=True, permission_classes=[IsAdminUser],
+            url_path='profile-detail', url_name='profile-detail')
     def get(self, request, pk):
         profile = get_object_or_404(Profile, pk=pk)
         serializer = ProfileSerializer(profile)
         return Response({'serializer': serializer, 'profile': profile})
 
+    @action(methods=['post'], detail=True, permission_classes=[IsAdminUser],
+            url_path='profile-detail', url_name='profile-detail')
     def post(self, request, pk):
         profile = get_object_or_404(Profile, pk=pk)
         serializer = ProfileSerializer(profile, data=request.data)
