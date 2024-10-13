@@ -1,10 +1,10 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer
-from django.shortcuts import render,redirect
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, Student
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, StudentSerializer
+from django.shortcuts import render, redirect
 
-from rest_framework.renderers import HTMLFormRenderer
-
+from rest_framework import renderers
+from rest_framework.response import Response
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -26,14 +26,13 @@ class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
 
-class CustomViewSet(viewsets.ModelViewSet):
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    renderer_classes = (renderers.JSONRenderer, renderers.TemplateHTMLRenderer)
 
-    def form(self, request, *args, **kwargs):
-        serializer = self.get_serializer()
-        renderer = HTMLFormRenderer()
-        form_html = renderer.render(serializer.data, renderer_context={
-            'template': 'rest_framework/api_form.html',
-            'request': request
-        })
-        return HttpResponse(form_html)
-
+    def list(self, request, *args, **kwargs):
+        response = super(StudentViewSet, self).list(request, *args, **kwargs)
+        if request.accepted_renderer.format == 'html':
+            return Response({'data': response.data}, template_name='home.html')
+        return response
