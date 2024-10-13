@@ -38,7 +38,7 @@ class StudentaddView(viewsets.ModelViewSet):
     """
     serializer_class = StudentSerializer
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
-    queryset = Student.objects.all()
+    queryset = {Student.objects.all()}
     template_name = 'student_form.html'
    
     def get(self, request, *args, **kwargs):
