@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, Student
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -27,10 +27,10 @@ class NotesSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Notes
 
-class StudentSerializer(serializers.ModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(
-        label=('First Name* '),  # Label for the field
-        required=True, # Field is required
+        label=('First Name* '), 
+        required=True, 
         max_length=100,
         style={
             "input_type": "text",
@@ -41,27 +41,27 @@ class StudentSerializer(serializers.ModelSerializer):
     )
     
     last_name = serializers.CharField(
-        label=('Last Name* '), # Label for the field
-        required=True,  # Field is required
+        label=('Last Name* '),
+        required=True, 
         max_length=100,
         style={
             "input_type": "text",
             "autofocus": False,
             "autocomplete": "off",
-            "required": True,   # HTML5 required attribute
+            "required": True, 
         },
       
     )
     
     email = serializers.EmailField(
-        label=('Email* '), # Label for the field
-        required=True,  # Field is required
+        label=('Email* '),
+        required=True, 
         max_length=100,
         style={
             "input_type": "email",
             "autofocus": False,
             "autocomplete": "off",
-            "required": True,   # HTML5 required attribute
+            "required": True, 
             }, 
     )
   
