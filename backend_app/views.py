@@ -40,8 +40,6 @@ class Form1View(viewsets.ModelViewSet):
     serializer_class = Form1Serializer
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
     template_name = 'form1.html'
-    queryset = Form1.objects.all()
-
 
    
     def get(self, request, *args, **kwargs):
