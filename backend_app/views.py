@@ -31,14 +31,14 @@ class NoteView(viewsets.ModelViewSet):
     serializer_class = NotesSerializer
 
 # Create your views here.
-class StudentaddView(viewsets.ModelViewSet):
+class StudentListAPIView(generics.ListAPIView):
     """
     View to get the listing of all contacts.
     Supports both HTML and JSON response formats.
     """
     serializer_class = StudentSerializer
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
-    queryset = {Student.objects.all()}
+    queryset = Student.objects.all()
     template_name = 'student_form.html'
    
     def get(self, request, *args, **kwargs):
