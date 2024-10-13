@@ -31,7 +31,7 @@ class NoteView(viewsets.ModelViewSet):
     serializer_class = NotesSerializer
 
 # Create your views here.
-class StudentaddView(generics.ListAPIView):
+class StudentaddView(viewsets.ModelViewSet):
     """
     View to get the listing of all contacts.
     Supports both HTML and JSON response formats.

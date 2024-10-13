@@ -25,7 +25,7 @@ router.register('uploadfiles', UploadedFilesView, 'uploadfile')
 router.register('uploadaudios', UploadedAudioView, 'uploadaudio')
 router.register('uploadvideos', UploadedVideoView, 'uploadvideo')
 router.register('notes', NoteView, 'note')
-#router.register('students', StudentaddView, 'student')
+router.register('students', StudentaddView, 'student')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
