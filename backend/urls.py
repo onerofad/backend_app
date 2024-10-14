@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView, ProfileDetail
+from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView
 
 router = routers.DefaultRouter()
 router.register('users', RegisterView, 'user')
@@ -30,6 +30,5 @@ router.register('notes', NoteView, 'note')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('profile/${pk}', ProfileDetail.as_view(), name='profile-detail'),
 
 ]
