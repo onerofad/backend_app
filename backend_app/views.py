@@ -28,19 +28,16 @@ class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()
     serializer_class = NotesSerializer
 
-class ProfileDetail(viewsets.ModelViewSet):
+class ProfileDetail(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'profile_detail.html'
 
-    @action(methods=['get'], detail=True, permission_classes=[IsAdminUser],
-            url_path='profile-detail', url_name='profile-detail')
+   
     def get(self, request, pk):
         profile = get_object_or_404(Profile, pk=pk)
         serializer = ProfileSerializer(profile)
         return Response({'serializer': serializer, 'profile': profile})
 
-    @action(methods=['post'], detail=True, permission_classes=[IsAdminUser],
-            url_path='profile-detail', url_name='profile-detail')
     def post(self, request, pk):
         profile = get_object_or_404(Profile, pk=pk)
         serializer = ProfileSerializer(profile, data=request.data)
