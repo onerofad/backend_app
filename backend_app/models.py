@@ -56,6 +56,7 @@ class Notes(models.Model):
         return self.title
 
 class FormTemplate(models.Model): 
+    form_name = models.CharField(max_length=255, default='')
     form_content = models.TextField()
    
 
