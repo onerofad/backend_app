@@ -30,6 +30,6 @@ router.register('notes', NoteView, 'note')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('profiles/', ProfileDetail.as_view(), name='profile-detail'),
+    path('profile/${pk}', ProfileDetail.as_view(), name='profile-detail'),
 
 ]
