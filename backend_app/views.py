@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer
 
 
 class RegisterView(viewsets.ModelViewSet):
@@ -18,6 +18,10 @@ class UploadedAudioView(viewsets.ModelViewSet):
 class UploadedVideoView(viewsets.ModelViewSet):
     queryset = UploadedVideo.objects.all()
     serializer_class = UploadedVideoSerializer
+
+class UploadedTextFileView(viewsets.ModelViewSet):
+    queryset = UploadedTextFile.objects.all()
+    serializer_class = UploadedTextFileSerializer
 
 class NoteView(viewsets.ModelViewSet):
     queryset = Notes.objects.all()

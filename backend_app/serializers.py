@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -31,3 +31,8 @@ class FormTemplateSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = FormTemplate
+
+class UploadedTextFileSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = UploadedTextFile
