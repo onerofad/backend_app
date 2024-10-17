@@ -55,6 +55,15 @@ class UploadedTextFile(models.Model):
     def __str__(self):
         return self.fileowner
 
+class UploadedPdfFile(models.Model):
+    fileowner = models.CharField(max_length=255)
+    filesender = models.CharField(max_length=255)
+    uploaded_text = models.TextField()
+    file_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.fileowner
+
 class Notes(models.Model):
     noteowner = models.CharField(max_length=255)
     title = models.TextField()
