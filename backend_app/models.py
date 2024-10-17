@@ -58,7 +58,7 @@ class UploadedTextFile(models.Model):
 class UploadedPdfFile(models.Model):
     fileowner = models.CharField(max_length=255)
     filesender = models.CharField(max_length=255)
-    uploaded_text = models.TextField()
+    uploaded_pdf = models.TextField()
     file_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
