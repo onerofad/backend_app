@@ -89,7 +89,7 @@ class Member(models.Model):
 
     
     def __str__(self):
-        return self.email
+        return self.memberEmail
 
    
 
