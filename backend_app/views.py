@@ -35,3 +35,7 @@ class FormTemplateView(viewsets.ModelViewSet):
     queryset = FormTemplate.objects.all()
     serializer_class = FormTemplateSerializer
 
+class SilaView(viewsets.ModelViewSet):
+    queryset = Register.objects.all()
+    serializer_class = Register
+

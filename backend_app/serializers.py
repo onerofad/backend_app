@@ -41,3 +41,4 @@ class UploadedPdfFileSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = UploadedPdfFile
+

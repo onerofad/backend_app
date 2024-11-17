@@ -13,7 +13,7 @@ class Register(models.Model):
     lname = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
-    accessnumber = models.TextField(default=getRandom)
+    password = models.TextField(default="")
     dob = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -79,6 +79,8 @@ class FormTemplate(models.Model):
 
     def __str__(self):
         return self.form_name
+    
+
    
 
 
