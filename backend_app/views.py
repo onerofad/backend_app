@@ -41,5 +41,5 @@ class SilaView(viewsets.ModelViewSet):
 
 class MemberView(viewsets.ModelViewSet):
     queryset = Member.objects.all()
-    serializer_class = Member
+    serializer_class = MemberSerializer
 
