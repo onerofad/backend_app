@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView, FormTemplateView, UploadedTextFileView, UploadedPdfFileView, SilaView
+from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView, FormTemplateView, UploadedTextFileView, UploadedPdfFileView, SilaView, MemberView
 
 router = routers.DefaultRouter()
 router.register('users', RegisterView, 'user')
@@ -29,6 +29,7 @@ router.register('formtemplates', FormTemplateView, 'formtemplate')
 router.register('uploadtextfiles', UploadedTextFileView, 'uploadtextfile')
 router.register('uploadpdffiles', UploadedPdfFileView, 'uploadpdffile')
 router.register('registers1', SilaView , 'registers1')
+router.register('members', MemberView, 'member')
 
 
 

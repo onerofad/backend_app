@@ -79,7 +79,17 @@ class FormTemplate(models.Model):
 
     def __str__(self):
         return self.form_name
+
+class Member(models.Model):
+    memberEmail = models.CharField(max_length=255)
+    role = models.CharField(max_length=255)
+    accessnumber = models.CharField(max_length=255)
+    member_owner = models.CharField(max_length=255)
+    status = models.CharField(max_length = 255, default='Pending')
+
     
+    def __str__(self):
+        return self.email
 
    
 
