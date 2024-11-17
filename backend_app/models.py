@@ -83,7 +83,7 @@ class FormTemplate(models.Model):
 class Member(models.Model):
     memberEmail = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
-    accessnumber = models.CharField(max_length=255)
+    accessnumber = models.CharField(default=getRandom)
     member_owner = models.CharField(max_length=255)
     status = models.CharField(max_length = 255, default='Pending')
 
