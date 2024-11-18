@@ -14,6 +14,7 @@ class Register(models.Model):
     email = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     password = models.TextField(default="")
+    verifyemail = models.IntegerField(default = 0)
     dob = models.DateField(auto_now_add=True)
 
     def __str__(self):
