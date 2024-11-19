@@ -81,16 +81,14 @@ class FormTemplate(models.Model):
     def __str__(self):
         return self.form_name
 
-class Member(models.Model):
-    memberEmail = models.CharField(max_length=255)
+class Community(models.Model):
+    communityname = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
-    accessnumber = models.CharField(default=getRandom)
-    member_owner = models.CharField(max_length=255)
-    status = models.CharField(max_length = 255, default='Pending')
+    community_owner = models.CharField(max_length=255)
 
     
     def __str__(self):
-        return self.memberEmail
+        return self.communityname
 
    
 

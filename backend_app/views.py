@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Member
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, MemberSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer
 
 
 class RegisterView(viewsets.ModelViewSet):
@@ -39,7 +39,7 @@ class SilaView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
     serializer_class = Register
 
-class MemberView(viewsets.ModelViewSet):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+class CommunityView(viewsets.ModelViewSet):
+    queryset = Community.objects.all()
+    serializer_class = CommunitySerializer
 
