@@ -82,14 +82,21 @@ class FormTemplate(models.Model):
         return self.form_name
 
 class Community(models.Model):
-    communityname = models.CharField(max_length=255)
+    communityname = models.CharField(max_length=255, unique=True)
     role = models.CharField(max_length=255)
     community_owner = models.CharField(max_length=255)
 
-    
     def __str__(self):
         return self.communityname
 
+class Member(models.Model):
+    community = models.ForeignKey(Community, on_delete=models.CASCADE, to_field='communityname')
+    memberEmail  = models.CharField(max_length=255)
+    memberRole = models.CharField(max_length=255)
+    accessnumber = models.CharField(max_length=255, default=getRandom)
+
+    def __str__(self):
+        return self.memberEmail
    
 
 

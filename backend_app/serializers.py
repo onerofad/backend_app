@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -46,4 +46,9 @@ class CommunitySerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Community
+
+class MemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Member
 
