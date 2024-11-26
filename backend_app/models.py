@@ -95,6 +95,7 @@ class Member(models.Model):
     memberRole = models.CharField(max_length=255)
     accessnumber = models.CharField(max_length=255, default=getRandom)
     status = models.CharField(max_length =255, default='pending')
+    community_owner = models.CharField(max_length=255, default="")
     
     def __str__(self):
         return self.memberEmail
