@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -51,4 +51,9 @@ class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Member
+
+class CourseWebSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = CourseWebUser
 

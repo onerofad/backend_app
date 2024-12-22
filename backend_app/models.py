@@ -99,6 +99,17 @@ class Member(models.Model):
     
     def __str__(self):
         return self.memberEmail
+
+class CourseWebUser(models.Model):
+    email = models.CharField(max_length = 255, default='')
+    password = models.CharField(max_length = 255, default='')
+    firstname = models.CharField(max_length = 255, default='')
+    lastname = models.CharField(max_length = 255, default='')
+    phone = models.CharField(max_length = 255, default='')
+
+    def __str__(self):
+        return self.firstname
+
    
 
 
