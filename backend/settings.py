@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y4a_1olot4oezni85ek%$3gh-ne@l#fx^az-@1*t^tv4-v3kpg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://masta-plana.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://masta-plana.vercel.app', 'https://courseweb-phi.vercel.app']
 
 
 # Application definition
@@ -151,7 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'https://masta-plana.vercel.app'
+    'https://masta-plana.vercel.app',
+    'https://courseweb-phi.vercel.app'
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
