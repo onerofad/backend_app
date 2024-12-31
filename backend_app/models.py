@@ -111,7 +111,16 @@ class CourseWebUser(models.Model):
     def __str__(self):
         return self.firstname
 
-   
+class Alarm(models.Model):
+    status = models.CharField(max_length = 255, default='')
+    clockTime = models.CharField(max_length = 255, default='')
+    aTime = models.CharField(max_length = 255, default='')
+    yearformat = models.CharField(max_length = 255, default='')
+    dcal = models.CharField(max_length = 255, default='')
+    description = models.CharField(max_length = 255, default='')
+
+    def __str__(self):
+        return self.description
 
 
 
