@@ -106,7 +106,6 @@ class CourseWebUser(models.Model):
     firstname = models.CharField(max_length = 255, default='')
     lastname = models.CharField(max_length = 255, default='')
     phone = models.CharField(max_length = 255, default='')
-    address = models.TextField(default='')
 
     def __str__(self):
         return self.firstname
