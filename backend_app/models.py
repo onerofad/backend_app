@@ -111,6 +111,19 @@ class CourseWebUser(models.Model):
     def __str__(self):
         return self.firstname
 
+class CourseDetails(models.Model):
+    description = models.TextField(default='', unique=True)
+
+class Course(models.Model):
+    title = models.TextField(default='')
+    image = models.TextField(default='')
+    video = models.TextField(default='')
+    amount = models.FloatField(default=0)
+    coursedetails = models.ForeignKey(CourseDetails, on_delete=models.CASCADE, to_field='description')
+
+    def __str__(self):
+        return self.title
+
 class Alarm(models.Model):
     email = models.CharField(max_length = 255, default='')
     clockTime = models.CharField(max_length = 255, default='')
