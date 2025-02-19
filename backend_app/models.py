@@ -111,6 +111,12 @@ class CourseWebUser(models.Model):
     def __str__(self):
         return self.firstname
 
+class Tutor(models.Model):
+    tutorname = models.CharField(max_length=255, default='', unique=True)
+
+    def __str__(self):
+        return self.tutorname
+    
 class CourseDetails(models.Model):
     description = models.TextField(default='', unique=True)
 
@@ -123,6 +129,7 @@ class Course(models.Model):
     video = models.TextField(default='')
     amount = models.FloatField(default=0)
     coursedetails = models.ForeignKey(CourseDetails, on_delete=models.CASCADE, to_field='description')
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, to_field='tutorname', default='' )
 
     def __str__(self):
         return self.title
