@@ -114,6 +114,9 @@ class CourseWebUser(models.Model):
 class CourseDetails(models.Model):
     description = models.TextField(default='', unique=True)
 
+    def __str__(self):
+        return self.description
+
 class Course(models.Model):
     title = models.TextField(default='')
     image = models.TextField(default='')
