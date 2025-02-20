@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Course, CourseDetails, Tutor, CourseContent
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, CourseDetailsSerializer, CourseSerializer, TutorSerializer, CourseContentSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Course, Tutor, CourseContent
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, CourseSerializer, TutorSerializer, CourseContentSerializer
 
 
 class RegisterView(viewsets.ModelViewSet):
@@ -58,10 +58,6 @@ class AlarmView(viewsets.ModelViewSet):
 class CourseView(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
-
-class CourseDetailsView(viewsets.ModelViewSet):
-    queryset = CourseDetails.objects.all()
-    serializer_class = CourseDetailsSerializer
 
 class TutorView(viewsets.ModelViewSet):
     queryset = Tutor.objects.all()
