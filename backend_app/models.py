@@ -129,6 +129,9 @@ class CourseContent(models.Model):
     subtitle = models.TextField(default = '')
     video = models.TextField(default = '')
 
+    def __str__(self):
+        return self.course_title
+
 class Course(models.Model):
     title = models.TextField(default='')
     image = models.TextField(default='')
