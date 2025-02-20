@@ -111,31 +111,7 @@ class CourseWebUser(models.Model):
     def __str__(self):
         return self.firstname
 
-class Tutor(models.Model):
-    tutorname = models.CharField(max_length=255, default='', unique=True)
 
-    def __str__(self):
-        return self.tutorname
-
-class Course(models.Model):
-    title = models.TextField(default='', unique=True)
-    image = models.TextField(default='')
-    video = models.TextField(default='')
-    amount = models.FloatField(default=0)
-    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, to_field='tutorname', default='' )
-
-    def __str__(self):
-        return self.title
-    
-class CourseContent(models.Model):
-    index = models.IntegerField()
-    course_content = models.TextField(default = '')
-    sub_content = models.TextField(default = '')
-    content_video = models.TextField(default = '')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, to_field='title', default='')
-
-    def __str__(self):
-        return self.course_content
 
 class Alarm(models.Model):
     email = models.CharField(max_length = 255, default='')
