@@ -123,6 +123,12 @@ class CourseDetails(models.Model):
     def __str__(self):
         return self.description
 
+class CourseContent(models.Model):
+    index = models.IntegerField()
+    course_title = models.TextField(default = '', unique=True)
+    subtitle = models.TextField(default = '')
+    video = models.TextField(default = '')
+
 class Course(models.Model):
     title = models.TextField(default='')
     image = models.TextField(default='')
@@ -130,6 +136,7 @@ class Course(models.Model):
     amount = models.FloatField(default=0)
     coursedetails = models.ForeignKey(CourseDetails, on_delete=models.CASCADE, to_field='description')
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, to_field='tutorname', default='' )
+    coursecontent = models.ForeignKey(CourseContent, on_delete=models.CASCADE, to_field='course_title', default='')
 
     def __str__(self):
         return self.title
