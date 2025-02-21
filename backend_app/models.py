@@ -147,5 +147,15 @@ class Alarm(models.Model):
     def __str__(self):
         return self.description
 
+class CartItems(models.Model):
+    emailId = models.CharField(max_length=255, default='')
+    item = models.TextField(default='')
+    amount = models.FloatField(default=0)
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.item
+
+
 
 
