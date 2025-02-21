@@ -148,6 +148,7 @@ class Alarm(models.Model):
         return self.description
 
 class CartItems(models.Model):
+    tutorial_id = models.IntegerField(default=0)
     emailId = models.CharField(max_length=255, default='')
     item = models.TextField(default='')
     amount = models.FloatField(default=0)
