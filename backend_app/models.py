@@ -158,8 +158,8 @@ class CartItems(models.Model):
         return self.item
 
 class Newfolder(models.Model):
-    f_name = models.CharField(max_length=255, default=''), 
-    f_owner = models.CharField(max_length=255, default=''), 
+    f_name = models.CharField(max_length=255, default='')
+    f_owner = models.CharField(max_length=255, default='')
     f_link = models.TextField(default='')
 
     def __str__(self):
