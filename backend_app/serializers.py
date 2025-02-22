@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Createfolder
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -82,8 +82,8 @@ class CartItemsSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = CartItems
 
-class CreatefolderSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = '__all__'
-        model = Createfolder
+#class CreatefolderSerializer(serializers.ModelSerializer):
+#    class Meta:
+#        fields = '__all__'
+#        model = Createfolder
 
