@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView, FormTemplateView, UploadedTextFileView, UploadedPdfFileView, SilaView, CommunityView, MemberView, CourseWebUserView, AlarmView, TutorialView, OwnerView, ContentView, CartItemsView
+from backend_app.views import RegisterView, UploadedFilesView, UploadedAudioView, UploadedVideoView, NoteView, FormTemplateView, UploadedTextFileView, UploadedPdfFileView, SilaView, CommunityView, MemberView, CourseWebUserView, AlarmView, TutorialView, OwnerView, ContentView, CartItemsView, NewfolderView
 
 router = routers.DefaultRouter()
 router.register('users', RegisterView, 'user')
@@ -37,7 +37,7 @@ router.register('tutorials', TutorialView, 'tutorial')
 router.register('owners', OwnerView, 'owner')
 router.register('contents', ContentView, 'content')
 router.register('cartitems', CartItemsView, 'cartitem')
-#router.register('create_folders', CreatefolderView, 'create_folder')
+router.register('create_folders', NewfolderView, 'create_folder')
 
 
 
