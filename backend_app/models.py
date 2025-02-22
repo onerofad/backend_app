@@ -157,6 +157,14 @@ class CartItems(models.Model):
     def __str__(self):
         return self.item
 
+class Createfolder(models.Model):
+    foldername = models.CharField(max_length=255, default=''), 
+    folder_owner= models.CharField(max_length=255, default=''), 
+    create_folder= models.TextField(default='')
+
+    def __str__(self):
+        return self.foldername
+
 
 
 
