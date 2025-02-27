@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning
 from django.conf import settings
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -86,4 +86,9 @@ class NewfolderSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Newfolder
+
+class MyLearningSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = MyLearning
 
