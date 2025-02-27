@@ -168,7 +168,7 @@ class Newfolder(models.Model):
 class MyLearning(models.Model):
     tutorial_id = models.IntegerField(default=0)
     emailId = models.CharField(default='')
-    tutorial_name = models.TextField(default='')
+#tutorial_name = models.TextField(default='')
 
     def __str__(self):
         return self.tutorial_name
