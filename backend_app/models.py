@@ -165,6 +165,15 @@ class Newfolder(models.Model):
     def __str__(self):
         return self.f_name
 
+class UploadFileToFolder(models.Model):
+    folder_id = models.IntegerField(default=0)
+    folder_name = models.CharField(max_length=255, default='')
+    folder_owner = models.CharField(max_length=255, default='')
+    uploaded_link = models.TextField(default='')
+
+    def __str__(self):
+        return self.folder_name
+
 class MyLearning(models.Model):
     tutorial_id = models.IntegerField(default=0)
     emailId = models.CharField(default='')
