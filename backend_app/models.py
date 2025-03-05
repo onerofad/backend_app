@@ -170,9 +170,10 @@ class UploadFileToFolder(models.Model):
     folder_name = models.CharField(max_length=255, default='')
     folder_owner = models.CharField(max_length=255, default='')
     uploaded_link = models.TextField(default='')
+    fileName = models.CharField(default='')
 
     def __str__(self):
-        return self.folder_name
+        return self.fileName
 
 class MyLearning(models.Model):
     tutorial_id = models.IntegerField(default=0)
