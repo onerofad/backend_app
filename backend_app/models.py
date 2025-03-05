@@ -171,6 +171,9 @@ class UploadFileToFolder(models.Model):
     folder_owner = models.CharField(max_length=255, default='')
     uploaded_link = models.TextField(default='')
     fileName = models.CharField(default='')
+    fileSize = models.IntegerField(default=0)
+    fileType = models.CharField(max_length=255, default='')
+    lastModifiedDate = models.TextField(default='')
 
     def __str__(self):
         return self.fileName
