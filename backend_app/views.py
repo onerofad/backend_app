@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder, Support
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer, SupportSerializer
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -81,5 +81,9 @@ class MyLearningView(viewsets.ModelViewSet):
 class UploadFileToFolderView(viewsets.ModelViewSet):
     queryset = UploadFileToFolder.objects.all()
     serializer_class = UploadFileToFolderSerializer
+
+class SupportView(viewsets.ModelViewSet):
+    queryset = Support.objects.all()
+    serializer_class = SupportSerializer
 
 

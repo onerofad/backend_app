@@ -186,6 +186,13 @@ class MyLearning(models.Model):
     def __str__(self):
         return self.tutorial_name
 
+class Support(models.Model):
+    email = models.CharField(max_length=255, default='')
+    message = models.TextField(default='')
+
+    def __str__(self):
+        return self.message
+
 
 
 
