@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y4a_1olot4oezni85ek%$3gh-ne@l#fx^az-@1*t^tv4-v3kpg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://mastaplana-web.vercel.app', 'https://courseweb-app.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost', 'https://mastaplana-app.vercel.app', 'https://courseweb-app.vercel.app']
 
 
 # Application definition
@@ -152,7 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'https://mastaplana-web.vercel.app',
+    'https://mastaplana-app.vercel.app',
     'https://courseweb-app.vercel.app'
 ]
 
