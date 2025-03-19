@@ -193,6 +193,37 @@ class Support(models.Model):
     def __str__(self):
         return self.message
 
+class TableData(models.Model):
+    head1 = models.CharField(max_length=255, default='')
+    head2 = models.CharField(max_length=255, default='')
+    head3 = models.CharField(max_length=255, default='')
+    head4 = models.CharField(max_length=255, default='')
+
+    value11 = models.CharField(max_length=255, default='')
+    value12 = models.CharField(max_length=255, default='')
+    value13 = models.CharField(max_length=255, default='')
+    value14 = models.CharField(max_length=255, default='')
+
+    value21 = models.CharField(max_length=255, default='')
+    value22 = models.CharField(max_length=255, default='')
+    value23 = models.CharField(max_length=255, default='')
+    value24 = models.CharField(max_length=255, default='')
+
+    value31 = models.CharField(max_length=255, default='')
+    value32 = models.CharField(max_length=255, default='')
+    value33 = models.CharField(max_length=255, default='')
+    value34 = models.CharField(max_length=255, default='')
+
+    value41 = models.CharField(max_length=255, default='')
+    value42 = models.CharField(max_length=255, default='')
+    value43 = models.CharField(max_length=255, default='')
+    value44 = models.CharField(max_length=255, default='')
+
+
+
+
+
+
 
 
 
