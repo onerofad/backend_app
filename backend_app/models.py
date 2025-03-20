@@ -194,6 +194,8 @@ class Support(models.Model):
         return self.message
 
 class TableData(models.Model):
+    title = models.CharField(max_length=255, default='')
+    emailId = models.CharField(max_length=255, default='')
     head1 = models.CharField(max_length=255, default='')
     head2 = models.CharField(max_length=255, default='')
     head3 = models.CharField(max_length=255, default='')
@@ -204,20 +206,20 @@ class TableData(models.Model):
     value13 = models.CharField(max_length=255, default='')
     value14 = models.CharField(max_length=255, default='')
 
-    value21 = models.CharField(max_length=255, default='')
-    value22 = models.CharField(max_length=255, default='')
-    value23 = models.CharField(max_length=255, default='')
-    value24 = models.CharField(max_length=255, default='')
+    value21 = models.CharField(max_length=255, default='data')
+    value22 = models.CharField(max_length=255, default='data')
+    value23 = models.CharField(max_length=255, default='data')
+    value24 = models.CharField(max_length=255, default='data')
 
-    value31 = models.CharField(max_length=255, default='')
-    value32 = models.CharField(max_length=255, default='')
-    value33 = models.CharField(max_length=255, default='')
-    value34 = models.CharField(max_length=255, default='')
+    value31 = models.CharField(max_length=255, default='data')
+    value32 = models.CharField(max_length=255, default='data')
+    value33 = models.CharField(max_length=255, default='data')
+    value34 = models.CharField(max_length=255, default='data')
 
-    value41 = models.CharField(max_length=255, default='')
-    value42 = models.CharField(max_length=255, default='')
-    value43 = models.CharField(max_length=255, default='')
-    value44 = models.CharField(max_length=255, default='')
+    value41 = models.CharField(max_length=255, default='data')
+    value42 = models.CharField(max_length=255, default='data')
+    value43 = models.CharField(max_length=255, default='data')
+    value44 = models.CharField(max_length=255, default='data')
 
 
 
