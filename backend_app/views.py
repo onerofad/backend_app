@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder, Support, TableData, Groups
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer, SupportSerializer, TableDataSerializer, GroupSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder, Support, TableData, Groups, GroupMembers
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer, SupportSerializer, TableDataSerializer, GroupSerializer, GroupMembersSerializer
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -93,5 +93,9 @@ class TableDataView(viewsets.ModelViewSet):
 class GroupsView(viewsets.ModelViewSet):
     queryset = Groups.objects.all()
     serializer_class = GroupSerializer
+
+class GroupMembersView(viewsets.ModelViewSet):
+    queryset = GroupMembers.objects.all()
+    serializer_class = GroupMembersSerializer
 
 

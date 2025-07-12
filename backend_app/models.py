@@ -225,6 +225,12 @@ class Groups(models.Model):
 
     def __str__(self):
         return self.groupname
+class GroupMembers(models.Model):
+    groupId = models.CharField(max_length=255)
+    membername = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.membername
 
 
 
