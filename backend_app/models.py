@@ -5,8 +5,6 @@ def getRandom():
     random_number = random.randint(1000000000, 9999999999)
     return random_number
 
-
-
 class Register(models.Model):
     fname = models.CharField(max_length=255)
     mname = models.CharField(max_length=255)
@@ -220,6 +218,13 @@ class TableData(models.Model):
     value42 = models.CharField(max_length=255, default='data')
     value43 = models.CharField(max_length=255, default='data')
     value44 = models.CharField(max_length=255, default='data')
+
+class Groups(models.Model):
+    groupname = models.CharField(max_length=255)
+    owner = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.groupname
 
 
 
