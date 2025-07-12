@@ -44,6 +44,8 @@ router.register('support_messages', SupportView, 'support_message')
 router.register('table_data', TableDataView, 'table')
 router.register('groups', GroupsView, 'group')
 router.register('groupmembers', GroupMembersView, 'groupmember')
+router.register('groupuploads', GroupMembersView, 'groupupload')
+
 
 
 urlpatterns = [

@@ -225,6 +225,7 @@ class Groups(models.Model):
 
     def __str__(self):
         return self.groupname
+
 class GroupMembers(models.Model):
     groupId = models.CharField(max_length=255)
     group_name = models.CharField(max_length=255, default="")
@@ -232,6 +233,14 @@ class GroupMembers(models.Model):
 
     def __str__(self):
         return self.membername
+
+class GroupUpload(models.Model):
+    file_uploaded = models.CharField(max_length=255)
+    id_group = models.CharField(max_length=255)
+    name_group= models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.file_uploaded
 
 
 

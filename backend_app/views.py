@@ -1,6 +1,10 @@
 from rest_framework import viewsets
-from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder, Support, TableData, Groups, GroupMembers
-from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer, SupportSerializer, TableDataSerializer, GroupSerializer, GroupMembersSerializer
+from .models import Register, UploadedFiles, UploadedAudio, UploadedVideo, Notes, FormTemplate, UploadedTextFile, UploadedPdfFile, Community, Member, CourseWebUser, Alarm, Tutorial, Owner, Content, CartItems, Newfolder, MyLearning, UploadFileToFolder, Support, TableData, Groups, GroupMembers, GroupUpload
+from .serializers import RegisterSerializer, UploadedFilesSerializer, UploadedAudioSerializer, UploadedVideoSerializer, NotesSerializer, FormTemplateSerializer, UploadedTextFileSerializer, UploadedPdfFileSerializer, CommunitySerializer, MemberSerializer, CourseWebSerializer, AlarmSerializer, TutorialSerializer, OwnerSerializer, ContentSerializer, CartItemsSerializer, NewfolderSerializer, MyLearningSerializer, UploadFileToFolderSerializer, SupportSerializer, TableDataSerializer, GroupSerializer, GroupMembersSerializer, GroupUploadsSerializer
+
+class Meta:
+        fields = '__all__'
+        model = GroupMembers
 
 class RegisterView(viewsets.ModelViewSet):
     queryset = Register.objects.all()
@@ -97,5 +101,9 @@ class GroupsView(viewsets.ModelViewSet):
 class GroupMembersView(viewsets.ModelViewSet):
     queryset = GroupMembers.objects.all()
     serializer_class = GroupMembersSerializer
+
+class GroupUploadView(viewsets.ModelViewSet):
+    queryset = GroupUpload.objects.all()
+    serializer_class = GroupUploadsSerializer
 
 
