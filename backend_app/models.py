@@ -227,7 +227,7 @@ class Groups(models.Model):
         return self.groupname
 
 class GroupMembers(models.Model):
-    groupId = models.CharField(max_length=255)
+    groupId = models.CharField(max_length=255, default='')
     group_name = models.CharField(max_length=255, default="")
     membername = models.CharField(max_length=255)
 
