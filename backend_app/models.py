@@ -235,6 +235,7 @@ class GroupMembers(models.Model):
         return self.membername
 
 class GroupUpload(models.Model):
+    file_name = models.CharField(max_length=255, default='')
     file_uploaded = models.CharField(max_length=255)
     id_group = models.CharField(max_length=255)
     name_group= models.CharField(max_length=255)
